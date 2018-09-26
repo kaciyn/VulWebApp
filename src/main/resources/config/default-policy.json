@@ -1,0 +1,10 @@
+[{		"name": "Admin",
+		"description": "Admins can do everything.",
+		"target": "subject.authorities.![authority].contains('ROLE_ADMIN')",
+		"condition": "true"
+},
+{		"name": "User",
+		"description": "Users can view their own blogs.",
+		"target": "subject.authorities.![authority].contains('ROLE_USER') && action == 'READ_BLOG'",
+		"condition": "subject.username == resource.user.login"
+}]
